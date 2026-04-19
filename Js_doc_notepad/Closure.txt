@@ -1,0 +1,177 @@
+// function sayHi(){
+//     var a = 10
+//     // console.log(a)
+//     return a
+// }
+
+// let valOfa = sayHi();
+// console.log(valOfa)
+
+// function outerFn() {
+//   let x = 10;
+
+//  return  function innerFn() {
+//     x += 1;
+//     return x;
+//   }
+
+// }
+
+// let outer1 = outerFn();
+// console.log(outer1())
+
+// function greet() {
+//    let name = "sam"
+//     return function() {
+//         return function(){
+//             return function(){
+//                 console.log(name)
+//             }
+//         }
+//     };
+// }
+// // let output = greet();
+// // let f1 = output();
+// // let f2 = f1();
+// // console.log(f1())
+// // let f3 = f2()
+// // console.log("f3",f3)
+
+// let output = greet()()()();  // currying
+
+
+
+// Debouncing
+
+// let set1 = setTimeout(()=>{console.log("Hi")},1000)
+// console.log(set1)
+
+// let inputBar = document.getElementById("input1")
+// inputBar.addEventListener("input", function () {
+//     debounce(fetchData, 1000)
+// });
+
+// let id;
+// function debounce(func, delay){
+//     if(id){
+//         clearTimeout(id)
+//     }
+
+//   id= setTimeout(()=>{
+//     func()
+//  }, delay)
+// }
+
+// function fetchData(){
+//     //fake
+//    console.log(inputBar.value)
+// }
+
+
+
+// actual implementation
+
+// let url = `https://www.omdbapi.com/?i=tt3896198&apikey=4cf4e8f7&`
+
+// let inputBar = document.getElementById("input1")
+// inputBar.addEventListener("input", function () {
+//     // debounce(fetchData, 1000)
+//     debounce(fetchData,1000)
+// });
+
+// let id;
+// function debounce(func, delay){
+//     if(id){
+//         clearTimeout(id)
+//     }
+
+//   id= setTimeout(()=>{
+//     func()
+//  }, delay)
+// }
+
+// async function fetchData(){
+//     //fake
+//    console.log(inputBar.value)
+//    let res = await fetch(`${url}s=${inputBar.value}`)
+//    let data =await res.json();
+//    console.log(data.Search);
+
+//    displayData(data.Search)
+// }
+
+// let container = document.getElementById("container")
+
+// function displayData(data){
+  
+//     data.forEach((ele)=>{
+//         let title = document.createElement("p");
+//         title.textContent = ele.Title;
+//     container.append(title)
+//     })
+
+// }
+
+
+
+// throttling
+
+
+let url = `https://www.omdbapi.com/?i=tt3896198&apikey=4cf4e8f7&`
+
+let inputBar = document.getElementById("input1")
+let Search = document.getElementById("Search")
+Search.addEventListener("click", function () {
+    // debounce(fetchData, 1000)
+    s1()
+});
+
+
+function outerThrottle(func, delay){
+    let flag = false;
+
+return function (){
+if(flag === true){
+return
+}
+func()
+flag = true
+
+setTimeout(()=>{
+    flag = false
+},delay)
+}
+
+}
+
+
+let s1 =  outerThrottle(fetchData, 2000)
+
+
+
+
+async function fetchData(){
+    //fake
+   console.log(inputBar.value)
+   let res = await fetch(`${url}s=${inputBar.value}`)
+   let data =await res.json();
+   console.log(data.Search);
+
+   displayData(data.Search)
+}
+
+
+
+let container = document.getElementById("container")
+
+function displayData(data){
+
+    container.innerHTML = ""
+  
+    data.forEach((ele)=>{
+        let title = document.createElement("p");
+        title.textContent = ele.Title;
+    container.append(title)
+    })
+
+}

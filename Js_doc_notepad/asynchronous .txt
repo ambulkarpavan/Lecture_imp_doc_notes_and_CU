@@ -1,0 +1,123 @@
+asynchronous 
+
+
+// How js works   -- line by line -- top to bottom
+// left --- right
+
+
+// sync or async
+
+// console.log("HI")
+
+
+// {
+// // which take time to exectue
+// }
+
+
+
+// function sayName() {
+//     console.log("Name : ", myVar);  
+  
+//     function sayAge() {
+//       myVar = 36;
+//         console.log("Age : ", myVar);
+//     }
+//     sayAge();
+//   }
+//   var myVar = "Vivek";
+//   sayName();
+
+
+// blocking of code and non-blocking of code
+
+
+//  console.log("hi");
+// for(let i =0;i<7000000000;i++){
+	
+// }
+// console.log("Welcome to masai School.")
+
+
+// setTimeout and setInterval
+
+// setTimeout(callback-fn, delay )
+
+// console.log("TImer")
+
+// let id = setTimeout(function(){console.log("Timer")}, 3000)
+// console.log(id)
+
+// clearTimeout(id)
+
+// console.log("Hi")
+// function sayName(){
+//     console.log("My name is pavan")
+// }
+
+// setTimeout(sayName, 3000)
+
+// console.log("Hello")
+
+
+//setInterval(callback, delay)
+
+// let set1 = setInterval(function(){console.log("Hi")}, 1000)
+
+// clearInterval(set1);
+
+
+// console.log("Hi")
+// function sayName(){
+//     console.log("My name is pavan")
+// }
+
+// setInterval(sayName, 3000)
+
+// console.log("Hello")
+
+
+// let count = 0;
+
+// let id = setInterval(function(){
+//     count++;
+//     console.log(count);
+//     document.querySelector("h1").textContent = count
+// }, 1000)
+
+
+// document.querySelector("button").addEventListener("click", function(){
+//     clearInterval(id)
+// })
+
+
+
+// console.log("starts")
+
+// function fn1(){
+//      console.log("fn1")
+// }
+// function fn2(){
+//     console.log("fn2")
+// }
+
+// function fn3(){
+//     console.log("fn3")
+// }
+
+// setTimeout(fn1 , 4000 )
+// setTimeout(fn2 , 0)
+// setTimeout(fn3 , 3000)
+
+// console.log("ends")
+
+
+
+// console.log(1)
+// console.log(2)
+
+// setTimeout(()=>{console.log("setTimeout")},0)
+// Promise.resolve().then(()=>{console.log("promise")});
+
+// console.log(3)
+// console.log(4);

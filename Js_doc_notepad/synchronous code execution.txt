@@ -1,0 +1,179 @@
+// synchronous code execution
+
+// How JS execute code ---> Line by  line from top to bottom  -- sync Language
+// let just understand  
+
+
+// sync code 
+
+// function sayName() {
+//     console.log("Name : ", myVar);
+  
+//     function sayAge() {
+//       myVar = 36;
+  //       console.log("Age : ", myVar);
+//     }
+//     sayAge();
+//   }
+//   var myVar = "Vivek";
+//   sayName();
+
+
+// In JavaScript, code execution involves two important contexts: 
+
+// 1. Global Execution Context  (create for each code)
+// 2. Function Execution Context.(Create only when function call )
+
+
+//   Each context consist of two phases 
+// 1. creation phase  
+// 2. Execution phase
+
+
+// call stack
+// this comes in play when we have function calls 
+//(this can include calls from methods like console.log to function declaration calls) ,
+// this helps in creation of lexographical scopes.
+
+
+
+// Blocking VS non-bloicking code
+// console.log("hi");
+// for(let i =0;i<7000000000;i++){
+	
+// }
+// console.log("Welcome to masai School.")
+
+// To overcome this take help from browser Api/ web Api 
+//--> setTimeout, setInterval,promises
+
+// setTimeout
+
+// console.log("Before setInterval")
+// function Maruti800(){
+//      console.log("Maruti going at 4000ms")
+// }
+// setTimeout(Maruti800 , 4000 )
+// console.log("after setInterval")
+
+//ex-2
+
+// console.log("Hi")
+// var id = setTimeout(function(){ alert("Show some add")},0);
+// clearTimeout(id)
+
+
+// example 2
+
+// console.log("hi");
+// setTimeout(function(){
+// for(let i =0;i<7000000000;i++){
+	
+// }},0)
+// console.log("Welcome to masai School.")
+
+
+// setInterval
+
+// setInterval(function(){console.log("hi")},1000)
+
+// var count =0;
+// var id = setInterval(function(){
+//     count++;
+//     console.log(count)
+// },1000)
+
+
+// clearInterval(id)
+
+
+
+// StopWatch application
+
+// var id;
+// var count = 0;
+// console.log(count);
+// document.getElementById("btn1").addEventListener("click", startFN);
+
+// function startFN() {
+//   id = setInterval(function () {
+//     count = count + 1;
+//     console.log(count);
+//     document.querySelector("span").innerText = count;
+//   }, 1000);
+// }
+
+// document.getElementById("btn").addEventListener("click", function () {
+
+//   clearInterval(id);
+// });
+
+// document.getElementById("btn2").addEventListener("click", function () {
+//   count = 0;
+//   document.querySelector("span").innerText = count;
+// });
+
+
+
+// asynchronous execution 
+
+//Event loop --> 
+// The event loop is a mechanism in JavaScript that handles asynchronous operations
+// while keeping the main thread free for user interaction and synchronous tasks.
+
+//ex-1
+
+// console.log("Before setInterval")
+// function Maruti800(){
+//      console.log("Maruti going at 4000ms")
+// }
+// setTimeout(Maruti800 , 4000 )
+// console.log("after setInterval")
+
+
+
+
+// ---------------------
+// student task
+
+// console.log("Program starts here")
+
+// function Maruti800(){
+//      console.log("Maruti going at 4000ms")
+// }
+// function Mercedes(){
+//     console.log("Mercedes going at 2000ms")
+// }
+
+// function BMW(){
+//     console.log("BMW going at 3000ms")
+// }
+
+// setTimeout(Maruti800 , 4000 )
+// setTimeout(Mercedes , 0)
+// setTimeout(BMW , 3000)
+
+// console.log("Program ends here")
+
+
+// --------------------------------
+
+
+
+// show dry run of below code
+
+//ex-1
+
+// console.log(1)
+// console.log(2)
+
+// setTimeout(()=>{console.log("setTimeout")},0)
+// Promise.resolve().then(()=>{console.log("promise")});
+
+// console.log(3)
+// console.log(4);
+
+
+
+// ex-2
+

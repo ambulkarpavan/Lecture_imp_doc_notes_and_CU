@@ -1,0 +1,123 @@
+js1
+
+
+//console.log("HI")
+
+
+// var pictures;    // decalration of variable
+
+// pictures = "Book"; // assigining the value to var
+
+// console.log(pictures);
+
+// var name = "Rahul";
+
+// console.log(name);
+
+// name = "Pavan";  // re - assigning the value to var
+
+// console.log(name)
+
+// var name = "Anup"   // re-decalring var 
+
+// console.log(name)
+
+
+
+// var Student = undefined ;   // decalring the var
+// // console.log(Student);
+
+// Student = "Rohan";  //  Assigning the value
+// // console.log(Student);
+
+// Student = "Pavan"; //  re -assignent value
+
+
+// var Student = 'Prachi';  //'', "", ``  string
+
+// var age = 27;// re-decalring the var  number
+
+
+// var FirstName = "Rahul12";
+
+// var isMarried = 'false';
+// console.log(isMarried);
+
+// console.log(typeof(isMarried))
+
+
+// var Student = "Pavan";
+
+// var student = "Rohan"
+
+// console.log(Student, student)
+
+
+
+// var a = 7;
+// var b = 5;
+
+// var c = a + b;
+
+// console.log(c)
+// console.log(a - b)
+// console.log(a * b)
+// console.log(a / b);
+
+// console.log(a % b);  //Modulo 
+
+// console.log(2 ** 2); // Exponential
+
+// console.log(25 ** 0.5); // Square root
+
+// var c = "Pavan";
+// var d = "Ambulkar"
+
+// console.log(c + " " + d);  // string concatination
+
+// var a = "7";
+// var b = 5; // type conversion/ 
+
+// console.log(a + b);  // 75
+
+// console.log(a - b); 
+
+// var a = true; // 1
+// var b = true; // 1
+
+// var c = a + b // 2
+
+// console.log("Sum is" + " " + c);
+
+// console.log("Hello World")
+
+
+// var motu = '10'; // string
+// var patlu = 10;  // number
+
+
+// // console.log(motu > patlu) // false
+// // console.log(motu < patlu)  // false
+// // console.log(motu >= patlu)  /// true 
+// // console.log(motu <= patlu) // true
+
+
+
+// console.log( motu == patlu)  // true
+// console.log(motu != patlu)  // flase
+
+// console.log(motu === patlu) 
+
+// console.log(motu !== patlu)// type & value
+
+
+
+// var a = 5;
+// var b = "12";
+// console.log(a == b); // flase
+// console.log(a === b); // false
+// console.log(a != b); // true
+// console.log(a !== b); // true
+
+
+

@@ -1,0 +1,139 @@
+functions
+
+
+
+
+
+
+// SayName()  // fn call/ fn invokation
+
+
+// function sum( a, b, d){
+ 
+//   var c = a + b + d
+//   // console.log(c)
+
+//   return c;
+
+// // console.log("Hi")
+  
+// }
+// var x = sum(10,20, 30)
+// console.log(x)
+
+
+// SayName("pavan")
+
+// function SayName(name){
+ 
+//   console.log(name)
+
+// }
+// sum(5, 6, 4)
+
+// var a = 10;
+// var b = 20;
+// var c = a + b 
+// var d = a * b 
+
+// console.log(c)
+// console.log(d)
+
+
+
+
+
+// function sum( a, b, d){
+
+//   var c = a + b + d
+//   return c;
+
+// }
+
+// var x = sum(1,2,3)
+
+// console.log(x)
+
+
+
+
+// function Square(Val){
+//   var Sq = Val * Val
+//   console.log(Sq)
+//   Sub(Sq)
+//   // return Sq;
+// }
+
+// var squareOfval = Square(x) // 36
+
+// console.log(squareOfval)
+
+
+
+// function Sub(z){
+//   var sub = z - 2
+//   console.log(sub)
+//   return sub;
+// }
+
+// var substarct = Sub(squareOfval)
+
+// console.log(substarct)
+
+
+
+// scope 
+
+// global // local
+
+// var a = "pavan"
+
+// function Square(Val){
+//   var Sq = Val * Val
+//   console.log(Sq)
+//   console.log("Inside fn", a)
+ 
+//   return Sq;
+// }
+// console.log ( "Outside fn", a)
+// // console.log(sq)
+
+// var x = Square(6);
+// console.log("Outside of scope", x)
+
+
+
+
+
+// function OddEven(a){
+//   if(a%2==0){
+//     console.log("Yes");
+//     return true
+//   }
+//   else
+//     {
+//       console.log("No");
+//       return false
+//     }
+// }
+
+// var x = OddEven(6)
+// console.log(x);
+
+
+
+// inbuild function
+
+
+// var arr = [1,2,3,4,5]
+
+// // arr.push(3)  // push()  pop()
+
+// // console.log(arr)
+
+// console.log(arr.join(" "))
+
+
+// var a = "Pavan Ambulkar";
+
+// console.log(a.split(""))

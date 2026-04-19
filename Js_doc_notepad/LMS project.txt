@@ -1,0 +1,45 @@
+LMS project
+
+cursor - code editor
+
+yarn dev - frontend
+
+npm run dev -- backend
+
+
+# need to install redis and Wsl for running linux(yarn) command on terminal in backend
+
+table plus to run SQL  
+
+ssh key - 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCbjYP5u/J7qHCfrD8koPCL+q41dzPXDxpEr3LJSuHH6wGf0fNuQV9VyaEfypTJS1BsxfQz7kA8r4vHLeYvaXvnM0l5szR1N82zQ7FEqO/HirBVk9krgWI9nm3wS2VUe0gQbAUF3woXWRxBZNtEieUusU9VUBLffZm6zeKPzqpql8tEEdiQim+dpapF1JTlvqQeevbD4bZwtyMslf/aAeyZ0tGaxx8wLocu9qHKJ1T+MFgXfbaD/zoVJ8qBC+oVlRnm3HYZyPs7lBx3f1tDt498SiynDjDwcoevewjGDMXUOlcQVEYAduD0UDIAuI8Yvdb4LgSRdrKl8R3lvKTcr2iEmjLh24NJUqUw5C/OA2jmRK10Of9AU0O0QnDVerr4mBrfAHcU3sgNVee2N1ai1LEnzWIA65PmAdErZXFaJKhCXy+zoyJgPNYkQwInEz7+1KxI+pshWgorqJAgnXmOxmzkbbpjdRptGeY48D4SOuJzZDinSU67K85z6ooKsA+jFos= root@LAPTOP-9AT5IAFM
+ 
+
+Amin side creds
+
+email: sourav.das@masaischool.com
+pass: masai@000
+
+
+
+$2a$10$bO.89Yx8yw6znVjEweTv3ubzEnL0vNP6PSscQl/5GBlA1O3ftVwXG --pass
+
+
+
+CAP-10 -- 36
+
+>= 3 - 12 -- 4 not submitted links 
+4 to 6 - 14
+7 to 9 - 13
+< 9 - 0
+
+CAP-12
+
+>= 3 - 23 but around 13 done nothing  42
+3 to 6 - 14   24
+6 to 9 - 13        34
+< 9 - 0
+
+codium
+salesjs , larval
+interface patterns

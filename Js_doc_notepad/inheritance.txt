@@ -1,0 +1,218 @@
+inheritance
+
+function User(name, age, city) {
+  //   var obj = {};
+  // var this ={}
+
+  this.name = name;
+  this.age = age;
+  this.city = city;
+  this.Hello = function (gender) {
+    console.log("Hello...." + gender);
+  };
+
+  this.Hi = function (gender) {
+    console.log("Hello...." + gender);
+  };
+
+  //   return obj;
+  // return this
+}
+
+var s1 = new User("Pavan", 27, "Pune");
+s1.Hello("Male");
+console.log(s1);
+var s2 = User("Adarsh", 25, "Gujarat");
+console.log(s2);
+s2.Hello("female");
+
+function Person(name, age, city, state) {
+  //   var obj2 = User(name, age, city);
+  // var this = {}
+
+  User.call(this, name, age, city);
+  this.state = state;
+
+  this.print = function () {
+    console.log(this.state);
+  };
+
+  //   return this;
+}
+
+var p1 = new Person("Shubham", 25, "Albar", "Rajastan");
+
+console.log(p1.Hello("Male"));
+
+//protoType and Inheritance
+
+var obj = {
+  name: "pavan",
+};
+
+console.log(obj);
+
+var arr = [1, 2, 3, 4];
+console.log(arr);
+arr.push(6);
+
+var arr1 = [];
+var arr = new Array();
+
+// console.log(arr)
+console.log(arr);
+console.log(arr.__proto__);
+console.log(arr.__proto__.__proto__);
+console.log(arr.__proto__.__proto__.__proto__);
+
+var obj1 = new Object();
+obj1.a = 1;
+console.log(obj1);
+
+var a = 10;
+
+var b = new String(10);
+
+//Object chaining -- object.create()
+var obj1 = {
+  a: 10,
+};
+
+console.log("obj1", obj1);
+
+var obj2 = Object.create(obj1);
+obj2.city = "Pune";
+
+console.log("obj2", obj2);
+console.log(obj2.a);
+
+var obj3 = Object.create(obj2);
+
+console.log(obj3);
+
+Object.setProtoTypeOF();
+
+var son = {
+  skinTone: "Brown",
+
+  // __proto__
+};
+
+var father = {
+  hair: "Curly",
+  // __proto__
+};
+
+// son.__proto__ = father
+
+Object.setPrototypeOf(son, father);
+
+var grandFather = {
+  height: "Tall",
+  // __proto__
+};
+
+// father.__proto__ = grandFather
+Object.setPrototypeOf(father, grandFather);
+
+console.log(son);
+console.log(son.__proto__);
+console.log(son.__proto__.__proto__);
+console.log(son.__proto__.__proto__.__proto__);
+console.log(son.__proto__.__proto__.__proto__._proto__);
+
+var uerProtoObj = {
+  Hello: function (gender) {
+    console.log("Hello...." + gender);
+  },
+
+  Hi: function (gender) {
+    console.log("Hello...." + gender);
+  },
+};
+
+function User(name, age, city) {
+  var obj = {};
+
+  Object.setPrototypeOf(obj, uerProtoObj);
+
+  obj.name = name;
+  obj.age = age;
+  obj.city = city;
+
+  return obj;
+}
+
+// var s1 =  User("Pavan", 27, "Pune");
+// // s1.Hello("Male");
+// console.log(s1);
+// var s2 = User("Adarsh", 25, "Gujarat");
+// console.log(s2);
+// // s2.Hello("female");
+
+var personProt = {
+  print: function () {
+    console.log(obj2.state);
+  },
+};
+
+Object.setPrototypeOf(personProt, uerProtoObj);
+
+function Person(name, age, city, state) {
+  var obj2 = User(name, age, city);
+
+  Object.setPrototypeOf(obj2, personProt);
+
+  obj2.state = state;
+
+  return obj2;
+}
+
+var p1 = new Person("Shubham", 25, "Albar", "Rajastan");
+
+console.log(p1);
+
+User.prototype.Hello = function (gender) {
+  console.log("Hello...." + gender);
+};
+
+User.prototype.Hi = function (gender) {
+  console.log("Hello...." + gender);
+};
+
+function User(name, age, city) {
+  // var this ={}
+
+  this.name = name;
+  this.age = age;
+  this.city = city;
+
+  //   return obj;
+  // return this
+}
+
+var s1 = new User("Pavan", 27, "Pune");
+s1.Hello("Male");
+console.log(s1);
+var s2 = User("Adarsh", 25, "Gujarat");
+console.log(s2);
+
+Person.prototype.print = function () {
+  console.log(this.state);
+};
+
+Object.setPrototypeOf(Person.prototype, User.prototype);
+
+function Person(name, age, city, state) {
+  //   var obj2 = User(name, age, city);
+  // var this = {}
+
+  User.call(this, name, age, city);
+  this.state = state;
+
+  //   return this;
+}
+
+var p1 = new Person("Shubham", 25, "Albar", "Rajastan");
+
+console.log(p1.Hello());

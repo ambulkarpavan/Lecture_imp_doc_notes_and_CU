@@ -1,0 +1,119 @@
+nested loops
+// var bag = "";
+
+// for(var i=0; i<=4; i++){
+//     bag = bag + "Hello" + " " 
+// }
+
+// console.log(bag)
+
+
+// for(var gorang=1; gorang<=6; gorang++){
+//     console.log(gorang)
+// }
+// console.log("Harsh")
+// for(var Harsh=1; Harsh<=6; Harsh++){
+//     console.log(Harsh)
+// }
+
+// console.log("Kaushal")
+// for(var Kaushal=1; Kaushal<=6; Kaushal++){
+//     console.log(Kaushal)
+// }
+
+
+// for(var i=1; i<=2; i++){
+//     for(var j=1; j<=3; j++){
+//         console.log(j)
+//     }
+// }
+
+
+// for(var father=1; father<=5; father++){
+//     console.log(father, "Sprint Start")
+//     for(var son=1; son<=5; son++){
+//         console.log(son)
+//     }
+//     console.log( father,"Sprint End")
+// }
+
+
+
+// for(var j=1; j<=5; j++){
+
+//     var bag = ""
+
+// for(i=1; i<=5; i++){
+// bag = bag + '*' + ' '
+// }
+
+// console.log(j, bag)
+
+// }
+
+
+// for(var j=1; j<=5; j++){
+
+//     var bag = ""
+
+// for(i=1; i<=j; i++){
+// bag = bag + '*' + ' '
+// }
+// console.log(j, bag)
+
+// }
+
+
+// for(var j=5; j>=1; j--){
+
+//     var bag = ""
+
+// for(i=1; i<=j; i++){
+// bag = bag + '*' + ' '
+// }
+// console.log(j, bag)
+// }
+
+
+// for(var j=1; j<=5; j++){
+
+//     var bag = ""
+
+// for(i=1; i<=j; i++){
+// bag = bag + '*' + ' '
+// }
+// console.log(j, bag)
+
+// }
+
+
+// for(var j=4; j>=1; j--){
+
+//     var bag = ""
+
+// for(i=1; i<=j; i++){
+// bag = bag + '*' + ' '
+// }
+// console.log(j, bag)
+// }
+
+
+
+// var a = 6;
+
+// var count= 0;
+
+// for(i = 1; i<=13; i++){
+//     if(a % i == 0){
+//        count++
+//     }
+// }
+
+
+// if(count == 2){
+//     console.log("Prime")
+// }
+// else{
+//     console.log("No Prime")
+// }
+

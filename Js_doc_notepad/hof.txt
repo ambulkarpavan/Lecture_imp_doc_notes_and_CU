@@ -1,0 +1,150 @@
+hof
+
+
+// // function statements
+
+// // function sayHello(str){
+// //   console.log(str)
+// // }
+
+// // sayHello("Sujal");
+
+// // function Expression
+
+// // a();
+
+// var a = function(){
+//     console.log("Hello");
+//     return "Hi"
+//   }
+//   var x = a();
+//   console.log(x);
+  
+  
+  
+  
+//   // console.log(a);
+  
+//   // var a = 5
+//   // console.log(a);
+  
+//   // `I am eating ${food}`
+  
+//   function eatBreakfast(food, time, check){
+//     check()
+//     // console.log("I am eating" + " " + food );
+//     console.log(`I am eating ${food} at ${time}am`);
+//   }
+  
+  
+//   function Check(){
+//     console.log(`I brush my teeth`)
+//   }
+  
+//   eatBreakfast("idli", 9, Check);
+
+
+
+// var sweets = ["kova","gulabjamun","laddu","mysorepak","badshaw"];
+
+
+// var plate=[];
+// for(var i=0; i<sweets.length; i++){
+//   plate.push(sweets[i]);
+// }
+
+// console.log(plate);
+
+
+//HoF
+//forEach
+// var plate=[];
+// sweets.forEach(function(ele){
+//    plate.push(ele);
+// });
+
+// console.log(plate)
+
+// map
+
+//  var newData =  sweets.map(function(ele){
+//     return ele
+//   });
+// console.log(newData)
+
+
+
+// let shapes = [
+//   {sides: 4, color: 'red'},
+//   {sides: 3, color: 'blue'},
+//   {sides: 4, color: 'blue'},
+//   {sides: 3, color: 'red'}
+// ];
+
+
+// var neaArr = shapes.map(function(ele){
+//   //console.log(ele.color)
+//   return ele.color
+// })
+
+// console.log(neaArr)
+
+
+//filter
+
+// var arr=[1,2,3,4,5,6,7,8,9,10]
+
+
+// var newArr = arr.filter(function(ele){
+//   // if(ele > 3){
+//   //   return ele
+//   // }
+
+//   return ele > 3;
+  
+// })
+// console.log(newArr)
+
+// let shapes = [
+//   {sides: 4, color: 'red'},
+//   {sides: 3, color: 'blue'},
+//   {sides: 4, color: 'blue'},
+//   {sides: 3, color: 'red'}
+// ];
+
+// var newData = shapes.filter(function(ele){
+//    // if(ele.sides === 4){
+//    //   return ele
+//    // }
+
+//   return ele.color === 'red'
+// })
+
+// console.log(newData)
+
+
+// reduce
+
+//  var arr=[1,2,3];
+
+
+// var newArr = arr.reduce(function(sum, ele){
+//   return sum * ele
+// },1)
+
+// console.log(newArr);
+
+
+// var arr=[1,2,3,4,5,6];
+
+// var newData = arr.filter(function(ele){
+//   return ele % 2 === 0
+// }).reduce(function(sum, ele){
+//   return sum + ele
+// }, 0)
+
+// console.log(newData)
+
+
+
+

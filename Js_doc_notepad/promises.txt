@@ -1,0 +1,318 @@
+//Promises
+
+// // guess output
+
+// console.log(1);
+// console.log(2);
+
+// Promise.resolve().then(() => {
+//     console.log("promise 1");
+// });
+
+// setTimeout(() => {
+//     console.log("setTimeout 2");
+// }, 1000);
+
+// Promise.resolve().then(() => {
+//     console.log("promise 2");
+// });
+
+// setTimeout(() => {
+//     console.log("setTimeout 1");
+// }, 0);
+
+// console.log(3);
+// console.log(4);
+
+// callback and promises
+
+// callback
+
+// function calculate(add){
+
+//     console.log(add)
+//     let sum = add(3,4)
+// // let sum = cb(5,6)
+
+// console.log(sum)
+// }
+
+// function add(a,b){
+//     // console.log(a+b)
+//     return a+b
+// }
+
+// calculate(add)
+
+// let ismarried = false;
+// function isMarried(ismarried){
+// if(ismarried){
+//     console.log("Married")
+// }
+// else{
+//     console.log("Not married")
+// }
+// }
+
+// isMarried(ismarried)
+
+// function isMarried(check){
+
+//    let ismarried = check();
+//    console.log("ismarried", ismarried)
+// if(ismarried){
+//     console.log("Married")
+// }
+// else{
+//     console.log("Not married")
+// }
+// }
+
+// function check(){
+//     let ismarried = false
+
+//     return ismarried
+// }
+
+// // console.log(check())
+
+// isMarried(check)
+
+// let arr= [1,2,3,4,5]
+
+// // function findOdd(arr, cb){
+// //     let filter = arr.filter((ele) =>{
+// //         return ele%2==0
+// //     })
+// // cb(filter)
+
+// // }
+
+// // findOdd(arr, function(result){
+// // console.log(result)
+// // })
+
+// function multiply(arr, num, cb){
+//   let mutltiData = arr.map((ele)=>{
+//     return ele*num
+//   })
+
+//   cb(mutltiData)
+// }
+
+// multiply(arr, 5, function(result1){
+// console.log(result1)
+// })
+
+// let arr= [1,2,3,4,5]
+
+// function findOdd(arr, cb){
+//     setTimeout(()=>{
+//         let filter = arr.filter((ele) =>{
+//             return ele%2==0
+//         })
+//     cb(filter)
+//     }, 2000)
+
+// }
+
+// findOdd(arr, function(result){
+// console.log(result)
+// })
+
+// function multiply(arr, num, cb){
+//  setTimeout(()=>{
+//     let mutltiData = arr.map((ele)=>{
+//         return ele*num
+//       })
+
+//       cb(mutltiData)
+//  }, 3000)
+// }
+
+// multiply(arr, 5, function(result1){
+// console.log(result1)
+// })
+
+// function findSum(arr, cb){
+//    setTimeout(()=>{
+//     let sum = arr.reduce((acc,curr)=>{
+//         return acc+curr
+//     }, 0)
+//     cb(sum)
+//    },4000)
+// }
+
+// findSum(arr, function(result2){
+//     console.log(result2)
+//     })
+
+// input --- arr=[1,2,3,4,5];
+// findOdd()  --- [1,3,5];
+// multiply() --- [5,15,25];
+// findSum()  ---   45
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function findOdd(arr, cb) {
+//   setTimeout(() => {
+//     let filter = arr.filter((ele) => {
+//       return ele % 2 == 1;
+//     });
+//     cb(filter);
+//   }, 2000);
+// }
+
+// function multiply(arr, num, cb) {
+//   setTimeout(() => {
+//     let mutltiData = arr.map((ele) => {
+//       return ele * num;
+//     });
+
+//     cb(mutltiData);
+//   }, 3000);
+// }
+
+// function findSum(arr, cb) {
+//   setTimeout(() => {
+//     let sum = arr.reduce((acc, curr) => {
+//       return acc + curr;
+//     }, 0);
+//     cb(sum);
+//   }, 4000);
+// }
+
+// findOdd(arr, function (result) {
+//   console.log("result", result);
+//   multiply(result, 5, function (result1) {
+//     console.log("result1", result1);
+//     findSum(result1, function (result2) {
+//       console.log(result2);
+//     });
+//   });
+// });
+
+// Promises
+
+//producer
+// let p1 = new Promise((resolve, reject)=>{
+//     //code
+// })
+
+// // consumer
+
+// p1.then(cb).catch(cb)
+
+// let isEvent = false;
+
+// let promise1 = new Promise((res, rej)=>{
+
+//     if(isEvent){
+//        res("The event happening")
+//     }
+//     else{
+//         rej("Not happeninig")
+//     }
+// })
+
+// // console.log(promise1);
+
+// promise1
+// .then((val)=>{console.log(val)})
+// .catch((val)=>{console.log(val)})
+
+// let isMarried = false;
+
+// // produce
+
+// let p1 = new Promise((res,rej)=>{
+//     if(isMarried){
+//         res("Person is married")
+//     }
+//     else{
+//         rej("Not married")
+//     }
+// })
+
+// // consume
+
+// p1
+// .then((val)=>{console.log(val)})
+// .catch((val)=>{console.log(val)})
+
+let arr = [1, 2, 3, 4, 5];
+
+function findOdd(arr) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let filter = arr.filter((ele) => {
+        return ele % 2 == 1;
+      });
+      res(filter);
+    }, 2000);
+  });
+}
+
+// findOdd(arr)
+// .then((val)=>{console.log(val)})
+// .catch((error)=>{console.log(error)})
+
+function multiply(arr, num) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let mutltiData = arr.map((ele) => {
+        return ele * num;
+      });
+
+      res(mutltiData);
+    }, 3000);
+  });
+}
+
+function findSum(arr) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      let sum = arr.reduce((acc, curr) => {
+        return acc + curr;
+      }, 0);
+      res(sum);
+    }, 4000);
+  });
+}
+
+// findOdd(arr, function (result) {
+//   console.log("result", result);
+//   multiply(result, 5, function (result1) {
+//     console.log("result1", result1);
+//     findSum(result1, function (result2) {
+//       console.log(result2);
+//     });
+//   });
+// });
+
+// findOdd(arr).then((val) => {
+//   console.log(val);
+//   multiply(val, 5).then((val1) => {
+//     console.log(val1);
+//     findSum(val1).then((val2) => {
+//       console.log(val2);
+//     });
+//   });
+// });
+
+
+// async-await
+
+async function consume(){
+try {
+    let p1 = await findOdd(arr)
+    console.log(p1)
+    let p2 = await multiply(p1,5)
+    console.log(p2)
+    let p3 = await findSum(p2)
+    console.log(p3)
+} catch (error) {
+    console.log(error)
+}
+}
+consume()

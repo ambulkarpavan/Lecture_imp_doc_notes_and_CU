@@ -1,0 +1,75 @@
+// currying
+
+
+// import add from "./utlis.js";
+import {add, sub} from "./utlis.js"
+
+// function greet(){
+//     console.log("Hi")
+//     return function(){
+//         console.log("Hello")
+
+//     }
+// }
+
+// let a = greet()
+// console.log(a())
+
+
+// function currying
+
+
+// function sum(a, b,c){
+//     console.log(a+b+c)
+// }
+
+// sum(2,3,4)
+
+
+// function sum(){
+//      return function(){
+//            return function(){
+//                      console.log("HI")
+//            }
+//      }
+// }
+// // let a = sum()
+// // console.log(a)
+// // let b = a()
+// // console.log(b)
+// // b()
+
+// sum()()()
+
+
+// function sum1(a){
+//     return function(b){
+//           return function(c){
+//                     console.log(a+b+c)
+//           }
+//     }
+// }
+
+
+// sum1(2)(3)(4)
+
+
+// function printName(a,b,c){
+//     console.log(a,b,c)
+// }
+
+// printName("Pavan", "Ambulkar", "Pune")
+
+
+// Import and Export
+// 1. Name export
+// 2.Default export
+
+
+
+
+
+console.log(add(5,6))
+console.log(sub(15,6))
+
+console.log(sub(155,6))

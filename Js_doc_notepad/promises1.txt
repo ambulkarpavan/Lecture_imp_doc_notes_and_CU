@@ -1,0 +1,251 @@
+let btn = document.getElementById("button-submit");
+btn.addEventListener("click", function () {
+  console.log("button clicked");
+});
+
+function findOdd(arr) {
+  let oddArr = arr.filter(function (item) {
+    return item % 2 !== 0;
+  });
+  return (oddArr);
+}
+function multiply(arr, value) {
+  let ans = arr.map((item) => {
+    return item * value;
+  });
+  return (ans);
+}
+
+function findSum(arr) {
+    let sum = arr.reduce((acc, item) => {
+      return acc + item;
+    }, 0);
+    return (sum);
+  }
+
+
+callback
+
+function find(arr, cb) {
+   setTimeout(function(){
+    let oddArr = arr.filter(function (item) {
+        return item % 2 !== 0;
+      });
+       cb(oddArr)    
+   }, 2000)
+
+  }
+
+function findOdd(arr, cb) {
+  let oddArr = arr.filter(function (item) {
+    return item % 2 !== 0;
+  });
+  cb(oddArr);
+}
+function multiply(arr, value, cb) {
+  let ans = arr.map((item) => {
+    return item * value;
+  });
+  cb(ans);
+}
+
+function findSum(arr, cb) {
+    let sum = arr.reduce((acc, item) => {
+      return acc + item;
+    }, 0);
+    cb(sum);
+  }
+  
+let arr = [2, 1, 3, 5, 8];
+
+
+findOdd(arr, function (result) {
+  console.log(result);
+});
+multiply(arr, 5, function (result) {
+  console.log(result);
+});
+findSum(arr, function (result) {
+  console.log(result);
+});
+
+
+find(arr, function(val){
+    console.log(val)
+})
+
+findOdd(arr, function(result1){
+    // console.log(result1)
+    multiply(result1, 5, function(result2){
+        // console.log(result2)
+        findSum(result2, function(result3){
+            console.log(result3)
+        })
+    })
+})
+
+
+
+
+async function calculate() {
+  try {
+    let oddArr = await findOdd(arr);
+    let mult = await multiply(oddArr, 5);
+    let sum = await findSum(mult);
+    console.log(sum);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+calculate();
+
+
+1st step is to findOdd
+[1,3,5]
+2nd step isto multiply 5 with each element of the array
+[5,15,25]
+3rd step: find SUm
+45
+
+
+findOdd(arr,function(ans){
+    console.log(ans);
+    multiply(ans,5,function(ans2){
+        console.log(ans2);
+        findSum(ans2,function(sum){
+            console.log(sum);
+        })
+    })
+})
+
+callback hell
+
+
+multiply(arr,5,function(ans){
+    console.log(ans);
+})
+findOdd(arr,function(oddArr){
+    console.log(oddArr);
+})
+findSum(arr,function(val){
+    console.log(val);
+})
+
+
+Promises
+
+let isEvent = false;
+producer code for promise
+let singerPromise = new Promise(function(resolve,reject){
+    if(isEvent===true){
+        resolve("the release date is 21st Feb...")
+    }
+    else{
+        reject("Sorry the event is canceled");
+    }
+})
+
+consuming the promise
+singerPromise.then(function(data){
+    console.log(data);
+}).catch(function(error){
+    console.log("Error: ",error)
+})
+
+or
+
+function singerPromise(isEvent){
+    return new Promise(function(resolve,reject){
+        if(isEvent===true){
+            resolve("the release date is 21st Feb...")
+        }
+        else{
+            reject("Sorry the event is canceled");
+        }
+    })
+}
+singerPromise(false).then((data)=>{console.log(data)}).catch((error)=>{
+    console.log(error);
+})
+
+
+
+create a function called fatherPromise that take one marks array and will return a promise
+the promise should either resolve or reject if the average marks is above 75
+if average marks>=75 => resolve it saying "Congrats! I will gift you a bike"
+else =>reject the promise saying "Sorry marks are not as expected , no bikes!"
+
+producer code
+[10,20,30]//60
+function fatherPromise(marks){
+    //write your code here
+    let totalSum = marks.reduce((acc,item)=>{return acc+item},0);
+    let average = totalSum/marks.length;
+    return new Promise(function(resolve,reject){
+        if(average>=75){
+            resolve("Congrats! I will gift you a bike")
+        }
+        else{
+            reject("Sorry marks are not as expected , no bikes!")
+        }
+    })
+  }
+//consume the promise
+  fatherPromise([70,80,85])
+  .then((data)=>{console.log(data)})
+  .catch((error)=>{console.log(error)})
+
+task code pen : https://codepen.io/pen/?editors=0010
+
+function findSum(arr) {
+    return new Promise(function (resolve, reject) {
+      let sum = arr.reduce((acc, item) => {
+        return acc + item;
+      }, 0);
+      resolve(sum);
+    });
+  }
+  function findOdd(arr) {
+    return new Promise(function (resolve, reject) {
+      let oddArr = arr.filter(function (item) {
+        return item % 2 !== 0;
+      });
+      resolve(oddArr);
+    });
+  }
+  function multiply(arr, value) {
+    return new Promise(function (resolve, reject) {
+      let ans = arr.map((item) => {
+        return item * value;
+      });
+      resolve(ans);
+    });
+  }
+
+  let arr = [2, 1, 3, 5, 8];
+
+  findOdd(arr)
+    .then((data) => {
+      return multiply(data, 5);
+    })
+    .then((data) => {
+        console.log(data)
+      return findSum(data);
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+try {
+  console.log(k);
+  let k = 10;
+} catch (error) {
+  console.log(error);
+}
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}

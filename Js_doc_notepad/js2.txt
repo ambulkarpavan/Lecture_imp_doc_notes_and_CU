@@ -1,0 +1,201 @@
+js2
+
+
+conditional statements and logical operators
+
+
+if(condition){
+    // print statement
+}
+
+var married = false
+
+console.log(married)
+
+if(married){
+    console.log("You are married");
+}
+else{
+    console.log("You are not married")
+}
+
+/ boolean
+
+if(true){
+    console.log("inside code")
+}
+
+expression 
+console.log(5>3)
+if(5<3){
+    console.log("5 is greater than 3");
+}
+else{
+    console.log("less than 5")
+}
+
+
+var x="pavan";
+var y = "Pavan";
+
+var c = (x == y) 
+
+if(c){
+    console.log("both variables have the same value");
+}
+else{
+    console.log("not same")
+}
+
+
+
+amount >1000 --- >10%
+amount > 1200  --- > 15%
+
+
+var amount = 300;
+
+if(amount > 1000){
+    console.log("get 10% discoount")
+}
+else if(amount > 1200){
+    console.log("get 15% discount")
+}
+else{
+    console.log("no discount")
+}
+var rice = false;
+var vegatables = false;
+var fruits = false;
+
+if(rice){
+    console.log("buy rice")
+}
+else if(vegatables){
+    console.log("buy vegatables")
+}
+else if(fruits){
+    console.log("buy fruits")
+}
+else{
+    console.log("buy nothing")
+}
+
+
+5>4   5>6
+
+falsy value in js
+
+false , 0 , undefined, null ,  NaN, ""
+
+Logical opertors
+
+And  ==> &&  --
+OR   ==> ||
+!  
+
+
+
+
+var a = true;
+var b = false;
+
+
+var c = true && true;
+
+console.log(c)
+
+
+var a = 5>3;
+var b = 6>4;
+
+
+var c = a && b;
+
+console.log(c)
+
+
+if(a){
+     if(b){
+        console.log("we have the best of both worlds");
+     }
+     
+}
+else{
+    console.log("world is not perfect");
+ }
+var a = 5>3;
+var b = 6<4;
+
+ if(a && b){
+    console.log("we have the best of both worlds");
+ }
+ else{
+    console.log("world is not perfect");
+ }
+
+
+console.log((5>4) && 0 && (2>1) &&  5 )
+
+
+console.log((5<4) && 3 || 7 ||  5 )
+
+var married = true
+
+console.log(married)
+
+if(!married){
+    console.log("You are married");
+}
+else{
+    console.log("You are not married")
+}
+
+
+
+
+switch statement
+
+var rice = false;
+var vegatables = false;
+var fruits = false;
+
+if(rice){
+    console.log("buy rice")
+}
+else if(vegatables){
+    console.log("buy vegatables")
+}
+else if(fruits){
+    console.log("buy fruits")
+}
+else{
+    console.log("buy nothing")
+}
+
+
+var option = "tue";
+
+switch(option){
+    case "mon":
+        console.log("Monday");
+        break;
+        case "tue":
+            console.log("Tuesday");
+            break;
+            case "wed":
+                console.log("Wednesday");
+                break;
+                case "thrus":
+                    console.log("Thrusday");
+                    break;
+                    case "fri":
+                        console.log("Friday");
+                        break;
+                        case "sat":
+                            console.log("Saturdya");
+                            break;
+  default :
+  console.log("Sunday");
+}
+

@@ -1,0 +1,153 @@
+// objects
+
+
+
+
+// var arr = ["Pooja", "Mohit", "Roshan"];
+
+// var age = [20, 22, 25];
+
+// var city = ["Pune", "Bangalore", "Mumbai"];
+
+
+// var arr = ["pooja", 20, "Pune", true]
+// console.log(arr[0])
+// arr.push("Math")
+
+
+// arr[0] = "Akash"
+// key-value pair
+// var obj = {
+//   name: "Pooja",
+//   age: 20,
+//   city: "Pune",
+//   isEmployed: true
+  
+// };
+
+//key : always unique
+
+// console.log(obj)
+
+// // dot notation(.)
+// how to acesses
+//
+// console.log(obj.name)
+// console.log(obj.age)
+
+// var obj = {
+//   name: "Pooja",
+//   age: 20,
+//   city: "Pune",
+//   isEmployed: true
+
+// };
+// obj.Address = "abcef"
+
+// console.log(obj)
+
+// obj.name = "Akash"
+
+// delete obj.city
+
+// console.log(obj)
+// Bracket notation([])
+
+// console.log(obj['name'])
+// console.log(obj['age'])
+
+// obj["Mark"] = 500;
+// obj['age'] = 35
+// console.log(obj)
+
+
+
+// var obj = {
+//   name: "Pooja", //string
+//   age: 20, // number
+//   city: "Pune", // str
+//   isEmployed: true, // boolen
+//   Marks : [20, 30 ,40 ],
+//   SubScore : { 
+//     "Math" : 70,
+//     "Sci": 60, 
+//     "Eng" : 50
+//   }
+// };
+
+// // console.log(obj.Marks[2])
+// console.log(obj.SubScore['Math'])
+
+// var arr = ["pooja", 20, "Pune", true]
+// console.log(arr[6])
+
+// for(var i=0; i<arr.length; i++){
+//   console.log(arr[i])
+// }
+
+
+// function Hello(){
+//   console.log("Hi")
+// }
+// Hello()
+
+
+
+// console.log(this)
+// var obj = {
+//   name: "Pooja",
+//   age: 20,
+//   city: "Pune",
+//   isEmployed: true,
+//    arr: [1,2,3,4],
+
+//   Hello : function(){
+//     console.log(this.name, this.age)
+//   },
+
+//   SayName : function(a){
+//   console.log(a)
+//   }
+
+// };
+
+// obj.Hello()
+// obj.SayName("abc")
+
+// console.log(obj['m']
+// console.log(obj.name)
+
+
+// // for in loop
+
+// for(var key in obj){
+//   console.log(key + "-" + obj[key])
+// }
+
+
+
+
+
+// var str = "masai";
+// // frequency
+// // output {m:1, a:2, s:1,i:1}
+
+// var obj = {}
+
+// for(var i=0; i<str.length; i++){
+//   // console.log(str[i])
+  
+//   if(obj[str[i]] == undefined){
+//      obj[str[i]] = 1
+//   }
+// else{
+//   obj[str[i]] = obj[str[i]] +1
+// }
+   
+  
+// }
+
+// console.log(obj)
+
+
+

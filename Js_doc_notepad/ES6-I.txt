@@ -1,0 +1,225 @@
+ES6-I
+
+
+
+let arr1 = [1, 2, 3];
+let arr2 = arr1;
+
+arr2.push(4);
+
+console.log(arr1);
+console.log(arr2);
+
+//Guess the Output for **`arr1`** and **`arr2`**: __________
+
+
+
+let obj1 = { name: "Alice", age: 25 };
+let obj2 = obj1;
+
+obj2.age = 30;
+
+console.log(obj1.age);
+console.log(obj2.age);
+
+//Guess the Output for **obj1.age** and **obj2.age**: __________
+
+
+
+Normal function
+function printName(){
+    console.log("Pavan")
+}
+
+printName()
+
+
+ES6 === Arrow function
+
+
+const printName = () => {
+    console.log("Pavan")
+return "Hi my name is pavan"
+}
+
+console.log(printName())
+
+const sum = (a ,b) => a+b
+console.log(sum(5, 6))
+
+
+function saHi(name, age){
+    let obj = {
+       name,
+       age
+    }
+
+    console.log(obj)
+}
+
+saHi("Pavan", 26)
+
+
+Default param
+
+function saHi(name, age, city = "pune"){
+    let obj = {
+       name,
+       age,
+       city
+    }
+
+    console.log(obj)
+}
+
+saHi("pavan", 26, "Mumbai")
+
+Ternary operator
+
+let name1 = ""
+
+if(name1){
+    console.log("Pavan")
+}
+else{
+    console.log("No")
+}
+
+name1 ?  console.log("Pavan") : console.log("No")
+
+(5<4) ? console.log("True") : console.log("False")
+
+
+for of
+
+let array = ["batman", "superman", "aquaman", "spiderman", "ironman"]
+for (let value of array) {
+  console.log(value)
+
+}
+
+rest and spread(...)
+
+rest  -- 
+
+
+function sum (...arr){
+    console.log(arr)
+}
+
+sum(1,2,3,4)
+
+function sum (a, b, ...arr){
+    console.log(a,b, arr)
+}
+
+sum(1,2,3,4)
+
+
+spread -- arr / object
+
+let arr = [1,2,3,4]
+
+function createArr(x){
+    console.log(...x)
+}
+
+createArr(arr)
+
+
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+
+let arr3 = [...arr1, ...arr2]
+
+console.log(arr3)
+
+// output arr3 = [1,2,3,4,5,6]
+
+let obj1 = {Name:"pavan"}
+let obj2 = {age:26}
+
+let obj3 = {...obj1, ...obj2}
+
+let obj4 = {...obj1}
+console.log(obj4)
+
+console.log(obj3)
+
+
+
+destructuring
+
+let arr1 = [1,2,3,4,5,6];
+
+let [ab, cd, ef , gh] = arr1
+
+console.log(ef)
+
+
+let user = {
+    firstName: 'Vivek',
+    lastName: 'Agarwal',
+    age: 38,
+  }
+
+  
+  let {firstName : name, lastName,age} = user
+
+  console.log(x)
+  
+
+let user = {
+    firstName: 'Vivek',
+    lastName: 'Agarwal',
+    age: 38,
+    posts: [
+      {title: 'Post 1', comments: 10},
+      {title: 'Post 2', comments: 11}
+    ]
+  }
+
+  let {firstName, lastName,age, posts} = user
+
+  let [a, b] = posts
+  
+  let {title, comments} = a
+  console.log(title, comments)
+
+const user = {
+    id: 339,
+    name: 'John',
+    age: 42,
+    education: {
+      degree: 'Masters'
+    }
+  };
+
+  let {name, education} = user
+
+  let {degree} = education
+
+  console.log(degree)
+
+
+const user = {
+    id: 339,
+    name: 'John',
+    age: 42,
+    subjects: ['HTML', 'CSS', 'Javascript'],
+    education: {
+      degree: {
+        name: 'BCA'
+      }
+    }
+  };
+
+//   let {education} = user
+//   let {degree} = education
+//   let {name} = degree
+
+let {education:{degree : {name}}} = user
+  console.log(name)
+
+
+

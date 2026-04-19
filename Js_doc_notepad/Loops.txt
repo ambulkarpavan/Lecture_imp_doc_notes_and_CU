@@ -1,0 +1,157 @@
+Loops
+// var a = 1;
+// a = a+5; //6
+// a = a-1  // 5
+// console.log(a)
+
+
+// let x=10;
+// x=x+1;  // 
+// x=x+5;  //
+// x=x+10;  // 
+// console.log(x);  
+// x=x-10; 
+// x=x-5; 
+// console.log(x);  
+
+
+// postfix
+// var a = 1 ;
+// console.log(a++);  // a+1  // 1  // 2
+// console.log(a)
+
+// var a = 1 ;
+// console.log(++a);  // a+1  // 2  // 2
+// console.log(a); // 2
+
+// var a = 10 ;
+// console.log(a--);  // a-1  10   9
+// console.log(a); // 9
+
+// var a = 10 ;
+// console.log(--a);  // a-1  // 9  9
+// console.log(a); // 9
+
+//prefix
+// var a = 10;
+// console.log(++a); //11
+// var b = 10;
+// console.log(b++); // 10  -- 11
+// console.log(a)  // 11
+// console.log(b);  // 11
+
+
+// while Loops 
+// var a = 0; 
+// while(a<=5){
+//    console.log(a);
+//    a++;
+// }
+
+
+// infinite loop
+
+// var a = 0; 
+
+// while(a<=5){
+//     console.log('Hello');
+   
+//  }
+
+
+// reverse loop
+
+// var a = 5;
+
+// while(a>=2){
+// console.log(a);
+// a = a-1;
+// // a--
+// }
+
+
+// var a = 1;
+
+// while(a <= 10){
+// console.log(a);
+// a = a+3
+// ;
+
+// }
+
+
+// break  continue
+
+
+// var a = 1;
+
+// while(a<=4){
+  
+// if(a == 2)
+// {
+// break;
+// }
+
+// console.log("member", a) 
+//    a++ ;
+// }
+
+
+var a = 1;
+
+while(a<=4){
+  
+if(a == 3)
+{
+    a++;
+continue;
+}
+console.log("member", a) 
+   a++ ;
+}
+
+
+// var guest=0;
+// while(guest<=10)
+// {
+// console.log("Guest",guest);
+// if(guest == 3)
+// {
+// continue;
+// }
+
+//     guest++;
+
+
+// }
+
+// for loop
+
+// var a = 0; 
+// while(a<=5){
+//    console.log(a);
+//    a++;
+// }
+
+// var bag ="";
+// for(i=0;i<=5;i++ ){
+//     bag = bag + i + " "
+   
+// };
+
+// console.log(bag)
+
+
+
+//sum
+// var sum=0;
+// for(i=0; i<=6; i++){
+//  sum = sum + i;
+
+// }
+// console.log(sum);
+
+
+// for(var i=5; i>=0; i--){
+//     console.log(i)
+// }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <img id= "img" src=""  alt="">
+        </div>
+        <div>
+            <button id="button1"> << </button>
+            <button id="button2">>></button>
+        </div>
+        <div><h2>image</h2></div>
+    </div>
+</body>
+</html>
+<script>
+    let arr = ['./images/img1.jpeg', './images/img2.jpeg', './images/img3.jpeg']
+    let but1 = document.getElementById('button1')
+    let but2 = document.getElementById('button2')
+    let box = document.getElementById('img')
+    let para = document.querySelector('h2')
+    
+    
+    let i=0 
+    console.log(i)
+    box.src = arr[i]
+    para.innerText = arr[i]
+
+    function backward(){
+        if(i > 0){
+            i--
+            console.log(i)
+        }
+       else {
+            i = arr.length - 1 
+        }
+        box.src = arr[i]
+        para.innerText = arr[i]
+    }
+
+
+    function forward(){
+        if(i < arr.length-1){
+            i++
+            console.log(i)
+        }
+        else{
+            i=0
+        }
+        box.src = arr[i]
+        para.innerText = arr[i]
+    }
+
+    
+    but1.addEventListener('click', function(){
+        backward()
+    })
+
+    
+    but2.addEventListener('click', function(){
+        forward()
+    })
+
+
+</script>

@@ -1,0 +1,186 @@
+how js works
+
+// // mutable and immutable  // non primitive
+// var arr = [1,2,3,4]  // Update == true  // mutable
+
+// console.log(arr[2]);
+
+// arr[2] = 30
+
+// console.log(arr)
+
+
+
+
+// var str = "Masai";   // update = false  // immutable
+
+// console.log(str[2]);
+
+// str[2] = "p"
+
+// console.log(str)
+
+
+// var obj = {
+//     name : "pavan"
+// }               // mutable
+
+// obj.age = 26   // creating
+// obj.name = "Saurabh" 
+// Object.freeze(obj);
+
+// obj.name = "Saurabh"  // update
+// obj.age =30
+
+// console.log(obj)
+
+// 10 -15 days
+// versions
+// ES 6 -  
+
+
+// var vs let vs const
+
+// var a ; // variable declaration  // line 1
+// a =10;  // assiging value
+
+
+
+// a = 20  // re-assigning the value
+
+// var a = "pavan"; // re- decalaration
+
+// console.log(a + 30) // 50  --- pavan30
+
+
+
+// console.log(a)
+
+
+// let b = 3; // variable declaration  + assiging value
+
+// b = 50; // re-assigning the value
+
+// // let b = "Roshan"   // XXX
+
+// console.log(b);
+
+
+// const c = 10; // variable declaration  + assiging value
+
+// // c = 20  //  XXX
+
+// // const c = 12 // XX
+
+// console.log(c)
+
+
+
+// scope 
+
+// global local
+
+// Hoisting ()
+
+
+
+//  var a = 10; // global
+//  let b =2;
+//  const c = 11;
+
+//  function Hi(){  // function
+
+//     var d = "pavan"
+
+//     console.log(a, b, c, d)
+//  }
+
+ 
+
+//  Hi()
+
+
+ // local
+
+ // function scope   // block scope 
+
+
+//  console.log(a)
+// var a = 10;
+
+
+//  function Hi(){  // function
+
+//     var d = "pavan"
+//     // console.log(a, d)
+
+//     if(true){
+//         let z = "roshan";
+       
+//     }
+
+    
+//  }
+
+//  Hi()
+
+//  console.log(z)
+// console.log(a)
+
+
+
+// var globalVar = 'Global'
+// function scopeTest() {
+//     var outerVar = 'outer var'; 
+//     let outerLet = 'outer let';
+  
+  
+//     console.log(outerVar); 
+//     console.log(outerLet);  
+    
+//   }
+//   console.log(globalVar)  
+//   scopeTest();
+
+
+
+// function scopeTest() {
+//     var outerVar = 'outer var';
+//     let outerLet = 'outer let';
+  
+//     if (true) {
+//       var innerVar = 'inner var'; 
+//       let innerLet = 'inner let'; 
+//     }
+  
+//     console.log(innerVar); 
+//     console.log(innerLet); 
+    
+//   }
+  
+//   scopeTest();
+
+
+
+// function sayName() {
+
+//     console.log("Name : ", myVar);
+  
+//     function sayAge() {
+  
+//       myVar = 36;
+  
+//       console.log("Age : ", myVar);
+//     }
+//     sayAge();
+//   }
+//   var myVar = "Vivek";
+//   sayName();
+
+
+
+// console.log("hi");
+// for(let i =0;i<7000000000;i++){
+	
+// }
+// console.log("Welcome to masai School.")

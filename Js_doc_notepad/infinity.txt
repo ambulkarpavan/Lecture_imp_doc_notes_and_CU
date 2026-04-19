@@ -1,0 +1,145 @@
+infinity
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 400px;
+        height: 300px;
+        border: 5px solid;
+        margin: auto;
+        padding: 10px;
+        overflow-x: scroll;
+      }
+
+      p{
+        /* width: 600px; */
+        margin: 0;
+        padding: 0;
+        border: 5px solid red;
+        height: 600px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+        reiciendis fugit deleniti odio in nam, excepturi suscipit quae odit,
+        temporibus, voluptate vel! Nostrum fugiat beatae nihil, delectus omnis
+      
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>
+
+
+let container = document.getElementById("container");
+
+console.log(container.clientHeight)
+console.log(container.scrollHeight)
+
+container.addEventListener("scroll", ()=>{
+  let clientHeight = container.clientHeight;
+  let scrollHeight = container.scrollHeight
+  let scrollTop = container.scrollTop
+
+  console.log(clientHeight,scrollHeight,scrollTop)
+
+  if(Math.ceil(scrollHeight-clientHeight) <= Math.ceil(scrollTop)){
+  console.log("Reaches to bottom")
+  }
+})
+
+
+
+
+--------------------------
+
+  #container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    border: 2px solid red;
+  }
+  
+  #container > div {
+    border: 1px solid ;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+  .text {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  img {
+    width: 100%;
+  }
+
+let container = document.getElementById("container");
+
+
+let flag = false;
+
+let url = `https://jsonplaceholder.typicode.com/photos`
+let page = 1;
+
+async function fetchData(page){
+ try {
+    let res = await fetch(`${url}?_page=${page}&_limit=15`);
+    let data = await res.json();
+    displayData(data)
+    console.log(data)
+ } catch (error) {
+    console.log(error)
+ }
+}
+
+fetchData(page)
+
+function displayData(data){
+
+    // container.innerHTML = "";
+
+    data.forEach((ele) => {
+        let card = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.src = ele.url
+
+        let title = document.createElement("h2");
+        title.textContent = ele.title
+
+        card.append(image,title)
+        container.append(card)
+    })
+
+    flag = true;
+}
+
+
+window.addEventListener("scroll", ()=>{
+    let clientHeight = document.documentElement.clientHeight;
+    let scrollHeight = document.documentElement.scrollHeight
+    let scrollTop = document.documentElement.scrollTop
+
+    console.log(clientHeight,scrollHeight,scrollTop)
+
+    if(Math.ceil(scrollHeight-clientHeight) <= Math.ceil(scrollTop)){
+        console.log("Reaches to bottom")
+          page++;
+        fetchData(page)
+
+        flag= false
+        }
+})
+

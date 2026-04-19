@@ -1,0 +1,292 @@
+Pagination
+// --- do not touch  ↓↓↓↓↓↓↓↓↓↓↓↓ ----------
+const baseServerURL = `http://localhost:${
+  import.meta.env.REACT_APP_JSON_SERVER_PORT
+}`;
+// --- do not touch  ↑↑↑↑↑↑↑↑↑↑↑↑ ----------
+
+// ***** Constants / Variables ***** //
+const artURL = `${baseServerURL}/arts`;
+let mainSection = document.getElementById("data-list-wrapper");
+let paginationWrapper = document.getElementById("pagination-wrapper");
+
+// art
+let artTitleInput = document.getElementById("art-title");
+let artImageInput = document.getElementById("art-image");
+let artartistInput = document.getElementById("art-artist");
+let artYearInput = document.getElementById("art-year");
+let artPaintBrushesInput = document.getElementById("art-paintbrushes");
+let artPriceInput = document.getElementById("art-price");
+let artMediumInput = document.getElementById("art-medium");
+let artCreateBtn = document.getElementById("add-art");
+
+// Update art
+let updateArtIdInput = document.getElementById("update-art-id");
+let updateArtTitleInput = document.getElementById("update-art-title");
+let updateArtImageInput = document.getElementById("update-art-image");
+let updateArtartistInput = document.getElementById("update-art-artist");
+let updateArtYearInput = document.getElementById("update-art-year");
+let updateArtPaintBrushesInput = document.getElementById(
+  "update-art-paintbrushes"
+);
+let updateArtPriceInput = document.getElementById("update-art-price");
+let updateArtMediumInput = document.getElementById("update-art-medium");
+let updateArtBtn = document.getElementById("update-art");
+
+//Update price
+let updatePackageArtId = document.getElementById("update-package-art-id");
+let updatePackageArtPackage = document.getElementById(
+  "update-package-art-package"
+);
+let updatePackageArtBtn = document.getElementById("update-package-art");
+
+//sort and filter
+let sortAtoZBtn = document.getElementById("sort-low-to-high");
+let sortZtoABtn = document.getElementById("sort-high-to-low");
+let filterTemperaOnCanvas = document.getElementById("filter-Tempera-on-Canvas");
+let filterOilOnCanvas = document.getElementById("filter-Oil-on-Canvas");
+
+//Search by title/colour
+
+let searchBySelect = document.getElementById("search-by-select");
+let searchByInput = document.getElementById("search-by-input");
+let searchByButton = document.getElementById("search-by-button");
+
+//Arts Data
+let artsData = [];
+let queryParamString = null;
+let pageNumber = 1;
+
+async function getData(url, queryParams = "") {
+  try {
+    console.log(url + "&" + queryParams);
+    let res = await fetch(url + "&" + queryParams);
+    pagination(res.headers.get("X-Total-count"), 5, queryParams);
+    console.log(res.headers.get("X-Total-count"));
+    let data = await res.json();
+    console.log(data);
+    displayData(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getData(`${artURL}?_page=1&_limit=5`);
+// pageGetData()
+
+function pagination(total, limit, queryParams) {
+  let totalPage = Math.ceil(total / limit);
+  console.log("pagination", totalPage, total, limit);
+
+  paginationWrapper.innerHTML = "";
+  for (let i = 1; i <= totalPage; i++) {
+    let btn = document.createElement("button");
+    btn.innerText = i;
+    btn.addEventListener("click", () => {
+      getData(`${artURL}?_page=${i}&_limit=5`, queryParams);
+    });
+    paginationWrapper.append(btn);
+  }
+}
+
+let displayData = (data) => {
+  mainSection.innerHTML = "";
+
+  let outerBox = document.createElement("div");
+  outerBox.setAttribute("class", "card-list");
+
+  data.forEach((ele) => {
+    let box = document.createElement("div");
+    box.setAttribute("class", "card");
+    box.setAttribute("data-id", ele.id);
+
+    let cartImg = document.createElement("div");
+    cartImg.setAttribute("class", "card-image");
+
+    let cartBody = document.createElement("div");
+    cartBody.setAttribute("class", "card-body");
+
+    let image = document.createElement("img");
+    image.setAttribute("alt", "art");
+    image.src = `${ele.image}`;
+
+    let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
+    title.textContent = `Art title : ${ele.title}`;
+
+    let artist = document.createElement("p");
+    artist.setAttribute("class", "card-artist");
+    artist.textContent = ele.artist;
+
+    let year = document.createElement("p");
+    year.setAttribute("class", "card-year");
+    year.textContent = `year : ${ele.year}`;
+
+    let paintbrushes = document.createElement("p");
+    paintbrushes.setAttribute("class", "card-paintbrushes");
+    paintbrushes.textContent = `paintbrushes : ${ele.details.paintbrushes}`;
+
+    let price = document.createElement("p");
+    price.setAttribute("class", "card-price");
+    price.textContent = ele.price;
+
+    let medium = document.createElement("p");
+    medium.setAttribute("class", "card-medium");
+    medium.textContent = ele.medium;
+
+    let link = document.createElement("a");
+    link.setAttribute("class", "card-link");
+    link.href = "#";
+    link.setAttribute("data-id", ele.id);
+    link.textContent = "Edit";
+    link.addEventListener("click", function () {
+      populateData(ele);
+    });
+
+    let delButton = document.createElement("div");
+    delButton.setAttribute("class", "card-button");
+    delButton.setAttribute("data-id", ele.id);
+    delButton.textContent = "Delete";
+    delButton.addEventListener("click", function () {
+      DeleteData(ele);
+    });
+
+    cartImg.append(image);
+    cartBody.append(
+      title,
+      artist,
+      year,
+      paintbrushes,
+      price,
+      medium,
+      link,
+      delButton
+    );
+    box.append(cartImg, cartBody);
+    outerBox.append(box);
+    mainSection.append(outerBox);
+  });
+
+  let DeleteData = async (ele) => {
+    let res = await fetch(`${artURL}/${ele.id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    getData(`${artURL}?_page=1&_limit=5`);
+  };
+};
+
+let createArt = async () => {
+  let bookObj = {
+    title: artTitleInput.value,
+    image: artImageInput.value,
+    artist: artartistInput.value,
+    year: +artYearInput.value,
+    details: {paintbrushes : [artPaintBrushesInput.value]},
+    price: +artPriceInput.value,
+    medium: artMediumInput.value,
+  };
+  let res = await fetch(artURL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bookObj),
+  });
+  let data = await res.json();
+  console.log("data", data);
+  getData(`${artURL}?_page=1&_limit=5`);
+  // pageGetData()
+};
+
+let populateData = async (ele) => {
+  console.log(ele);
+ 
+  //populating all datafor whole update
+      updateArtIdInput.value = +ele.id;
+      updateArtTitleInput.value = ele.title,
+      updateArtImageInput.value = ele.image
+      updateArtartistInput.value = ele.artist,
+      updateArtYearInput.value = ele.year,
+      updateArtPaintBrushesInput.value = ele.details.paintbrushes,
+      updateArtPriceInput.value = ele.price,
+      updateArtMediumInput.value = ele.medium,
+
+  localStorage.setItem("eleId", +ele.id);
+
+  // populating only id and packageCTC
+
+  updatePackageArtId.value = ele.id;
+  updatePackageArtPackage.value = ele.price;
+};
+
+//update
+let updateArt = async () => {
+  let id = localStorage.getItem("eleId");
+  let bookObj = {
+    id: updateArtIdInput.value,
+    title: updateArtTitleInput.value,
+    image: updateArtImageInput.value,
+    artist: updateArtartistInput.value,
+    year: +updateArtYearInput.value,
+    details: {paintbrushes: [updateArtPaintBrushesInput.value]},
+    price: +updateArtPriceInput.value,
+    medium: updateArtMediumInput.value,
+  };
+  console.log(bookObj);
+  let res = await fetch(`${baseServerURL}/arts/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(bookObj),
+  });
+  let data = await res.json();
+  console.log("data", data);
+  getData(`${artURL}?_page=${1}&_limit=5`);
+};
+
+let updatePackageArt = async () => {
+  let id = localStorage.getItem("eleId");
+  let artPackage = {
+    price: updatePackageArtPackage.value,
+  };
+  let res = await fetch(`${baseServerURL}/arts/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(artPackage),
+  });
+  let data = await res.json();
+  console.log("data", data);
+  // getDatalog("data", data)
+  getData(`${artURL}?_page=${1}&_limit=5`);
+};
+
+searchByButton.addEventListener("click", () => {
+  getData(
+    `${artURL}?_page=1&_limit=5`,
+    `${searchBySelect.value}_like=${searchByInput.value}`
+  );
+});
+
+sortAtoZBtn.addEventListener("click", () => {
+  getData(`${artURL}?_page=1&_limit=5`, `_sort=price&_order=asc`);
+});
+sortZtoABtn.addEventListener("click", () => {
+  getData(`${artURL}?_page=1&_limit=5`, `_sort=price&_order=desc`);
+});
+filterTemperaOnCanvas.addEventListener("click", () => {
+  getData(`${artURL}?_page=1&_limit=5`, `medium=Tempera on Canvas`);
+});
+filterOilOnCanvas.addEventListener("click", () => {
+  getData(`${artURL}?_page=1&_limit=5`, `medium=Oil on Canvas`);
+});
+
+artCreateBtn.addEventListener("click", function () {
+  createArt();
+});
+
+updateArtBtn.addEventListener("click", function () {
+  updateArt();
+});
+
+updatePackageArtBtn.addEventListener("click", function () {
+  updatePackageArt();
+});

@@ -1,0 +1,124 @@
+positioning
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      .container-a{
+            width: 400px;
+            height: 1000px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        .container-b{
+            width: 300px;
+            height: 300px;
+            background-color: violet;
+            margin-top: 100px;
+            /* position: fixed; */
+        }
+        .container-c{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            position: absolute;
+              top:100px;
+             /*  position: relative; 
+            top:30px;
+            left: 40px; */
+
+        }
+        
+     .box{
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+            position: absolute;
+            top:60px;
+            left: 200px;
+        } 
+      .inpt{
+            width: 400px;
+            padding: 20px;
+            border-radius: 35px;
+        }
+        button{
+            padding: 10px;
+            position: relative;
+            left: 55px;
+            left: -55px;
+            border-radius: 50%;
+            right: 50px;
+        }  
+       .navbar{
+            width: 100%;
+            height: 100px;
+            background-color: aqua;
+            position: fixed;
+            top:0;
+            left: 0;
+        }
+        .content>div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        } 
+    </style>
+</head>
+<body>
+
+    <div class="container-a">
+        <div class="container-b">
+            <div class="container-c">
+
+            </div>
+        </div>
+    </div>
+
+ <input class="inpt">
+    <button > Go </button>
+
+     <div>
+        
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, dolor.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, dolor.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, dolor.</p>
+        <div class="box">
+
+        </div>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    
+    </div> 
+
+      <div class="navbar">
+        
+
+    </div>
+
+    <div class="content">
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+           <div></div>
+    </div> 
+    
+</body>
+</html>
