@@ -1,0 +1,1 @@
+- Based on the block, sprint, and course, the guidelines for each evaluation will vary. Therefore, you can find them in the folder `programs/<program-code>/<course-code>/evaluation-guidelines/<sprint-code>.md`.
